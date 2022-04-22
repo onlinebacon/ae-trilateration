@@ -42,7 +42,7 @@ const projectToPx = (lat, lon) => {
 	return [ x, y ];
 };
 
-const drwaGrid = () => {
+const drawGrid = () => {
 	const c = size/2;
 	const rad = c;
 	const latLen = rad/nLatLines;
@@ -96,7 +96,7 @@ const drawMap = () => {
 };
 
 clearCanvas();
-drwaGrid();
+drawGrid();
 
 const textarea = document.querySelector('textarea');
 const parseDeg = str => {
@@ -142,7 +142,7 @@ const trilaterate = () => {
 const render = () => {
 	clearCanvas();
 	drawMap();
-	drwaGrid();
+	drawGrid();
 	for (let circle of circlesOfEqualAltitude) {
 		const { lat, lon, rad } = circle;
 		drawCircle(lat, lon, rad);
